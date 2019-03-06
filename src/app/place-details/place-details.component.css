@@ -1,0 +1,156 @@
+
+.container {
+    position: relative;
+    width:90%;
+    min-width: 45em;
+    max-width: 50em;
+    margin-right: auto;
+    margin-left: auto;
+    background-color:var(--buttonBackgroundColor);
+    color: var(--textColor);
+    border-radius: 10px;
+    border:1px solid transparent;
+    margin-bottom: 2em;
+}
+
+.title{
+    font-size: 1.5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: 1.5%;
+    padding-left: .25em;
+}
+
+/* start reviews */
+.reviews{
+    border-top: 3px solid var(--textColor);
+    padding-top: 1em;
+    padding-bottom: .5em;
+    width:95%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+/* start user */
+.user{
+    width:7em;
+    min-width: 7em;
+    max-width: 7em;
+}
+.userImage{
+    max-width: 6em;
+    max-height: 6em;
+    border-radius: 7px;
+
+    height:6em;
+    width:6em;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.containingDiv{
+    max-width: 6em;
+    max-height: 6em;
+    border-radius: 7px;
+
+    height:6em;
+    width:6em;
+}
+.containingDiv img {
+    max-width: 6em;
+    max-height: 6em;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: .5em;
+}
+.hide{
+    visibility: hidden;
+}
+
+
+
+.name{
+    margin-top: .25em;
+}
+.commentIcon{
+    margin-top: .25em;
+    background-image: url('../../assets/comment.png');
+    background-repeat: no-repeat;
+    height:1.5em;
+    padding-left: 2.5em;
+    padding-top: .5em;
+    font-size: .75em;
+}
+/* end user */
+
+/* start review details */
+.reviewDetails{
+    display:flex;
+    flex-direction: column;
+}
+
+/* start starsAndDate */
+.starsAndDate{
+    display:flex;
+    flex-direction: row;
+}
+.stars{
+    font-size: 1.75em;
+    pointer-events:none;
+    margin-left: -.5em;
+}
+.date{
+    padding-top: .75em;
+    font-size: 1em;
+}
+/* end starsAndDate */
+
+.ratings{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    margin-top: .5em;
+    margin-bottom: .25em;
+    font-size: .95em;
+}
+
+.words{
+    margin-top: 1em;
+}
+
+/* end reviews */
+
+
+@media screen and (max-width: 730px) {
+    
+    .container {
+        width:100%;
+        min-width: 1em;
+        max-width: 500em;
+        border-radius: 0px;
+        border:1px solid transparent;
+        margin-bottom: -1em;
+        top:-1em;
+
+    }
+
+    .stars{
+        font-size: 1.5em;
+    }
+    .date{
+        padding-top: .6em;
+        font-size: 1em;
+    }
+    .ratings{
+        font-size: .9em;
+    }
+
+}
+
+
+

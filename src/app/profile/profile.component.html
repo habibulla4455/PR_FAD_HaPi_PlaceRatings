@@ -1,0 +1,56 @@
+<input type="file" name="file" id="file" class="inputfile" class="hiddenInput" #george (change)="upload(george)" />
+<div class="container"  [ngClass]="reviews.length === 0 ? 'containerNoReviews' : ''" >
+                
+        <div class="picture">
+                
+                <div class="displayNameTop">{{userDisplayName}}</div>
+               
+                
+                <div class="containingDiv" [ngClass]="userImage ? '' : 'hide'"> <img [src]="userImage"> </div>
+
+                <div class="displayNameBottom">{{userDisplayName}}</div>
+                
+                <label for="file" class="button" [ngClass]="showChangePicture ? '' : 'hide'"> {{userImage ? 'Change' : 'Upload' }} Picture</label>
+             
+        </div>
+
+        <div class="reviews" [ngClass]="reviews.length === 0 ? 'noReviews' : ''" >
+               
+                <div class="title">Reviews</div>
+               
+                <div class="review" *ngFor="let review of reviews"> 
+                        
+                        <div class="place" routerLink = "../../place/{{review.placeId}}">
+                               
+                                <div [style.backgroundImage]="'url('+ review.image1 +')'" class="placeImage"></div>
+
+                                <div class="name">{{review.place}}</div>
+                        </div>
+                
+                        <div class="reviewDetails">
+                                
+                                <div class="starsAndDate">
+                                        <div class="stars"><app-rating [rating]="review.overallRating" ></app-rating> </div>
+                                        <div class="date">{{review.reviewDate}}</div>
+                                </div>  
+                
+                                <div class="ratings">
+                                        Burger {{review.burger}} 	&#183; Benny {{review.benny}}	&#183; Bloody {{review.bloody}}	&#183; Beers {{review.beers}}
+                                </div>
+                
+                                <div class="words">
+                                        {{review.words}}
+                                </div>
+                
+                        </div>
+                             
+                </div>
+
+        </div>
+
+</div>
+<div id="map"></div>
+
+
+
+        

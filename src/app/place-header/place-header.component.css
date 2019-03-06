@@ -1,0 +1,119 @@
+.container {
+    position: relative;
+    width:90%;
+    min-width: 45em;
+    max-width: 50em;
+    margin-right: auto;
+    margin-left: auto;
+    background-color:var(--buttonBackgroundColor);
+    color: var(--textColor);
+    border-radius: 10px;
+    padding-top: 1em;
+}
+
+.pictureContainer{
+    max-height: 15em;
+    margin-bottom: 1em;
+}
+
+.pictures{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    margin-bottom: .5em;
+}
+
+.headerImage{
+    height:13em;
+    width:14em;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+h2{
+    margin-top: -.03em;
+    margin-left: .75em;
+}
+hr {
+    width:97%;
+}
+.stars{
+    margin-top: -1em;
+    margin-left: .66em;
+    font-size: 1em;
+    padding-bottom: .5em;
+    pointer-events:none;
+}
+.numberOfReviews{
+    margin-left: -5em !important;
+    padding-top: .25em;
+    font-size: .75em !important;
+}
+
+@media screen and (max-width: 730px) {
+    
+    .container {/*
+        min-width: 2em;
+        max-width: 500em;
+        margin-right: auto;
+        margin-left: auto;
+        JUSTBELOWISTHENEWSHIT
+        */
+        width:100%;
+        min-width: 1em;
+        max-width: 500em;
+        border-bottom: 2px solid var(--buttonHoverColor );
+        background-color: var(--buttonBackgroundColor);
+        margin-bottom: -.15em;
+        border-radius: 0px;
+        padding-top: 1em;
+    }
+    .pictureContainer{
+        max-height: 8em;
+        margin-bottom: 1em;
+    }
+    .headerImage{
+        height:6em;
+        width:8em;
+        margin-right: 1em;
+        margin-left: 1em;
+        border-radius: 7px;
+    }
+    hr {
+        display:none;
+    }
+}
+/*
+@media screen and (max-width: 380px) and (orientation: portrait) {
+    
+    .container {
+        min-width: 2em;
+        max-width: 500em;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 10px;
+        padding-top: 1em;
+    }
+
+    .pictureContainer{
+        max-height: 8em;
+        margin-bottom: 1em;
+    }
+
+    .headerImage{
+        height:6em;
+        width:8em;
+        margin-right: 1em;
+        margin-left: 1em;
+        border-radius: 7px;
+    }
+
+  
+}*/

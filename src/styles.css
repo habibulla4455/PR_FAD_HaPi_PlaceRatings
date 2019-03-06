@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    --elementBackgroundColor: #181e2b;
+    --buttonBackgroundColor: #131822;
+    --buttonHoverColor: #5f7186;
+    --textColor: #c1c5ce;
+
+    --menuTransitionTime: .5s;
+    --burgerMenuBackgroundColor: #162036;
+
+    --rowBorderColor:#0e1118;
+    --labelWidth:2.8em;
+
+    --inputBackgroundColor: #3b465e;
+    --borderRadius:.25em;
+    --buttonBorderRadius:.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+}
+

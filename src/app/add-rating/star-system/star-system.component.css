@@ -1,0 +1,12 @@
+span {
+    height:1em;
+    margin-left:.5em;
+    color:rgb(212, 212, 22);
+}
+/*
+span:hover:before {
+    content: "\2605";
+    position: absolute;
+    color:black;
+ }
+*/

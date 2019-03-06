@@ -5,8 +5,18 @@
   <title>BoilerPlate</title>
   <base href="/">
 
+<style>
+body{background-color:#273247;}
+@media screen and (max-width: 640px) {
+  body{background-color:var(--buttonBackgroundColor);}
+}
+</style>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBFVVrhsa9-8yzokhHRA8QRbUBLskYjtuQ"></script>
+
 </head>
 <body>
   <app-root></app-root>

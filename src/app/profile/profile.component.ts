@@ -1,0 +1,131 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import * as firebase from 'firebase/app';
+
+@Component({
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
+})
+export class ProfileComponent implements OnInit {
+
+  reviews: object[];
+  userEmail:string;
+  userDisplayName:string;
+  userImage:string;
+  showChangePicture:boolean;
+  user;
+
+  constructor( private readonly route: ActivatedRoute, private readonly router: Router) { 
+  }
+
+  loadUser(){
+    this.reviews = [];
+
+    firebase.firestore().collection("reviews").where("email", "==", this.userEmail)
+    .get()
+    .then( 
+      (querySnapshot) => {
+        this.populateReviews(querySnapshot);
+      }
+    );
+  }
+
+
+  populateReviews(querySnapshot){
+
+    this.reviews = [];
+    querySnapshot.forEach( (doc) => { 
+      this.reviews.push(doc.data()); 
+    });
+
+    this.user = firebase.auth().currentUser;
+    this.showChangePicture = false;
+    
+    if( this.user && this.user.email === this.userEmail){
+      this.showChangePicture = true;
+    }
+    
+    this.reviews.sort(  
+      (a,b) => (a['reviewDate'] < b['reviewDate']) ? 1 : -1 );
+  }
+
+
+  
+  ngOnInit() {
+
+    this.showChangePicture = false;
+    this.reviews = [];
+    this.userEmail = this.route.snapshot.paramMap.get("email");
+    this.userDisplayName = this.userEmail.substring(0, this.userEmail.lastIndexOf("@"));
+    this.loadUser();
+
+    this.route.params.subscribe(params => {
+      this.userEmail = params['email'];//.get("email");
+      this.userDisplayName = this.userEmail.substring(0, this.userEmail.lastIndexOf("@"));
+      firebase.storage().ref().child( this.userEmail )
+      .getDownloadURL()
+      .then(
+        (url) => {
+          this.userImage = url;
+          }
+        );
+      this.reviews=[];
+      this.loadUser();
+    });
+  }
+
+  updateUserImage(){
+
+    firebase.storage().ref().child( this.userEmail )
+    .getDownloadURL()
+    .then( (url) => {
+        this.userImage = url;
+        this.user.updateProfile({photoURL: url, displayName: this.user.displayName})
+        .then( () => { 
+            this.updateReviews();
+            }
+          );
+        }
+      );
+    }
+
+  updateReviews(){
+    firebase.firestore().collection("reviews").where("email", "==", this.user.email )
+    .get()
+    .then(
+      ( querySnapshot ) => {
+        querySnapshot.forEach( (doc) => {
+            firebase.firestore().collection("reviews").doc(doc.id).update({userImageURL : this.user.photoURL});
+            } 
+          );
+        }
+      );
+    }
+
+
+
+  upload( imageInput: any ){
+
+    if (this.user) { // if user is signed in
+      
+      const file: File = imageInput.files[0];
+      const reader = new FileReader();
+      
+      reader.addEventListener('load', 
+        (event: any) => {
+
+          firebase.storage().ref().child( this.userEmail )
+          .put( file )
+          .then( 
+            (snapshot) => {//file was successfully uploaded
+              this.updateUserImage();          
+            }
+          );      
+        }
+      );
+      reader.readAsDataURL(file);
+    }// end if user is signed in
+  } // end upload method
+
+}

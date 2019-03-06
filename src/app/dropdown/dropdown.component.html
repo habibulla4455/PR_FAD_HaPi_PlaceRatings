@@ -1,0 +1,9 @@
+<div class="picklist" (click)="dropdownClicked()"  [ngClass]="picklistMenuExpand ? 'upArrow' : ''">
+  
+  <div class="title"> {{item}} &nbsp; <div class="selected"> {{rating}}</div></div>
+     
+</div>
+
+<div class="picklistMenu" [ngClass]="picklistMenuExpand ? 'picklistMenuExpand' : ''">
+    <div class="option" *ngFor="let option of options" (click)="rating = option" (click)="ratingSelected(option)" >{{option}}</div>
+</div>

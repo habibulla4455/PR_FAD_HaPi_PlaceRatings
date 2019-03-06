@@ -1,0 +1,331 @@
+.container {
+    position: absolute;
+    top: 7em;
+    width:90%;
+    max-width: 60em;
+    min-width: 45em;
+    
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    
+    background-color: var(--buttonBackgroundColor);
+    display: flex;
+    flex-direction: row;
+    border-radius: var(--buttonBorderRadius);
+}
+
+.containerNoReviews{
+    flex-direction: column;
+}
+
+/* start profile picture and change picture button */
+.picture{
+    margin-top: .75em;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 22em;
+    display: flex;
+    flex-direction: column;
+}
+
+.containingDiv{
+    margin-top: 1em;
+    max-width: 20em;
+    max-height: 20em;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: .5em;
+}
+.containingDiv img {
+    max-width: 20em;
+    max-height: 20em;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: .5em;
+}
+
+.displayNameTop{
+    font-size: 2em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: -.25em;
+    color:var(--textColor);
+    display:none;
+}
+.displayNameBottom{
+    font-size: 2em;
+    margin-right: auto;
+    margin-left: auto;
+    color:var(--textColor);
+    margin-top: .25em;
+}
+
+/* start upload file button*/
+.button {
+    padding:1em;
+    font-size: 1em;
+    background-color: var(--buttonBackgroundColor);
+    color: var(--textColor);
+    width:75%;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-transition:  .25s; /* Safari */
+    transition:  .25s;
+    border:none;
+    border:2px solid var(--buttonHoverColor);
+    border-radius: var(--buttonBorderRadius);
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: .5em;
+}
+.button:hover {
+    background-color: var(--buttonHoverColor);
+    transform: scale(1.01);
+    box-shadow: -.25em .5em 1.25em 0em #111111;
+    transition: .5s;
+}
+.button:focus {
+    outline:0;
+}
+.hiddenInput{
+    opacity:0;
+}
+.hide{
+    display: none;
+}
+.noReviews{
+    visibility: hidden;
+}
+/* end upload file button*/
+/* end profile picture and change picture button */
+
+
+
+/* start reviews */
+.reviews{
+    display: flex;
+    flex-direction: column;
+    color: var(--textColor);
+    padding: 1em;
+    width:30em;
+    min-width: 30em;
+    
+}
+
+.title{
+    color: var(--textColor);
+    font-size: 2em;
+    text-align: center;
+    width:100%;
+    border-bottom: 3px solid var(--textColor);
+}
+
+
+/* start reviews */
+.review{
+    border-bottom: 3px solid var(--textColor);
+    padding-top: 1em;
+    padding-bottom: .5em;
+    width:100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+/* start place */
+.place{
+    width:7em;
+    min-width: 7em;
+    max-width: 7em;
+    cursor: pointer;
+}
+.place:focus{
+    outline: 0;
+}
+.placeImage{
+    max-width: 6em;
+    max-height: 6em;
+    border-radius: 7px;
+
+    height:6em;
+    width:6em;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.placeImage:focus{
+    outline: 0;
+}
+.name{
+    margin-top: .25em;
+    font-size: .75em;
+}
+/* end place */
+
+/* start review details */
+.reviewDetails{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+/* start starsAndDate */
+.starsAndDate{
+    display:flex;
+    flex-direction: row;
+}
+.stars{
+    font-size: 1.75em;
+    pointer-events:none;
+    margin-left: -.5em;
+}
+.date{
+    padding-top: .75em;
+    font-size: 1em;
+}
+/* end starsAndDate */
+
+.ratings{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    margin-top: .5em;
+    margin-bottom: .25em;
+    font-size: .95em;
+}
+
+.words{
+    margin-top: 1em;
+}
+
+/* end reviews */
+
+
+
+
+
+
+
+
+
+
+.commentIcon{
+    margin-top: .25em;
+    background-image: url('../../assets/comment.png');
+    background-repeat: no-repeat;
+    height:1.5em;
+    padding-left: 2.5em;
+    padding-top: .5em;
+    font-size: .75em;
+}
+
+
+
+@media screen and (max-width: 950px) {
+    
+    .container {
+        flex-direction: column;
+        min-width: 1em;
+        width:100%;
+        top:4.5em;
+        border-radius: 0;
+        margin-bottom: .0em;
+    }
+
+    .picture{
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+    }
+
+    .displayNameTop{
+       display: block;
+    }
+    .displayNameBottom{
+        display:none;
+    }
+
+    .button{
+        margin-top: 1em;
+        width:50%;
+    }
+
+    .reviews{
+        width:90%;
+        min-width: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .reviewDetails{
+        width:auto;
+    }
+    .ratings{
+        font-size: .75em;
+    }
+
+    .stars{
+        width:      7.25em;
+        min-width:  7.25em;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    
+    .container {
+        flex-direction: column;
+        min-width: 1em;
+        width:100%;
+        top:4.5em;
+        border-radius: 0;
+        margin-bottom: .0em;
+    }
+
+    .picture{
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+    }
+
+    .displayNameTop{
+       display: block;
+    }
+    .displayNameBottom{
+        display:none;
+    }
+
+    .button{
+        margin-top: 1em;
+        width:50%;
+    }
+
+    .reviews{
+        width:85%;
+        min-width: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+ 
+    .reviewDetails{
+        width:auto;
+    }
+    .ratings{
+        font-size: .5em;
+    }
+
+    .stars{
+        width:      7.25em;
+        min-width:  7.25em;
+        font-size: 1.25em;
+    }
+    .date{
+        padding-top: .2em;
+    }
+
+}

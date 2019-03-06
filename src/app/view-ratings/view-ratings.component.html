@@ -1,0 +1,5 @@
+<div class="container" >
+        <div *ngFor="let placeID of placeIDs" class="tile"  >
+                <app-placetile placeId="{{placeID}}"  routerLink = "../place/{{placeID}}" ></app-placetile>   
+        </div>
+</div>

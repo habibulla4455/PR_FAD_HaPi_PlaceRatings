@@ -1,0 +1,17 @@
+
+
+
+
+<span  
+  *ngFor="let star of stars; let i = index"
+  [innerHTML]="star"
+  (click)="onClick(i)"
+  
+  
+></span>
+
+<!--
+(mouseover)="onMouseOver(i)"
+  (mouseleave)="onMouseOut(i)"
+
+-->

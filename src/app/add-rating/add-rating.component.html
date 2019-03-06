@@ -1,0 +1,41 @@
+<div class="errorMessage">  {{placeErrorMessage}} {{ratingErrorMessage}}  </div>
+
+
+<div class="container" [ngClass]="error ? 'hide' : 'show'">
+
+      <div class="mapAndDetails">
+            
+            <div id="map" class="map">
+
+            </div>
+
+            <div class="details">
+
+                  <div class="place" [ngClass]="noPlace ? 'redOutline' : ''">  <AutocompleteComponent id="Place" (setAddress)="getEstablishmentAddress($event)" adressType="establishment"></AutocompleteComponent>  </div>
+                 
+                  <div class="dropsAndWords">
+                              <div><div class="drops" *ngFor="let thing of thingsToRate" [ngClass]="noRating ? 'redOutline' : ''" >  <app-dropdown [item]="thing" (ratingClick)='dropdownReceiver($event)' ></app-dropdown>  </div></div>
+                              
+                              <textarea id="words" class="words" [(ngModel)]="words" placeholder = "Comments" onfocus="this.placeholder=''"></textarea> 
+                  </div>
+               <!--
+                  <div class="stars"> Overall <app-rating [menuItem]="overall" (ratingClick)='ratingComponentClick($event)'></app-rating>  </div>
+
+                  <app-rating [menuItem]="thing" (ratingClick)='ratingComponentClick($event)'></app-rating>
+
+
+               -->
+            </div>
+
+      </div>
+
+      <div class="button">
+      <app-button [title] = "'ADD RATING'" (emitter)="addButtonHandler($event)" ></app-button>
+      </div>
+
+</div>
+<!--
+<div class="error" [ngClass]="error ? 'show' : 'hide'"> 
+      <h1>{{errorMessage}}</h1>
+</div>
+-->

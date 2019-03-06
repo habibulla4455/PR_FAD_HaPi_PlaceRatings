@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div class="img" [style.backgroundImage]="'url('+ image1 +')'"></div>
+    
+  <hr/>
+
+    <h3>{{placeName}}</h3>
+    
+    <div class="stars" >
+        <app-rating [rating]="averageRating" ></app-rating> {{numberOfReviews}} Review{{numberOfReviews > 1 ? 's' : ''}}
+    </div>
+
+</div>
+<div id="map"></div>

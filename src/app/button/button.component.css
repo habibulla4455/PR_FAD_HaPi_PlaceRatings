@@ -1,0 +1,37 @@
+button {
+    padding:1em;
+
+    font-size: 1em;
+
+    background-color: var(--buttonBackgroundColor);
+    color: var(--textColor);
+    width:100%;
+
+    -webkit-transition:  .25s; /* Safari */
+    transition:  .25s;
+    border:none;
+    border-radius: var(--buttonBorderRadius);
+}
+
+button:hover {
+    background-color: var(--buttonHoverColor);
+    transform: scale(1.01);
+    box-shadow: -.25em .5em 1.25em 0em #111111;
+    transition: .5s;
+}
+
+button:focus {outline:0;}
+
+
+
+@media screen and (max-width: 380px) and (orientation: portrait) {
+    button{
+        background-color: #0d0e0f;
+    } 
+}
+
+@media screen and (max-width: 640px) {
+    button{
+        background-color: #212e3d;
+    } 
+}

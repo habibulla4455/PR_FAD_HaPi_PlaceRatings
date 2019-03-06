@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="title">What People Are Saying</div>
+ 
+    <div class="reviews" *ngFor="let review of reviews"> 
+                        
+        <div class="user" routerLink = "../../profile/{{review.email}}">
+           <!-- <div [style.backgroundImage]="'url('+ review.userImageURL +')'" class="userImage"></div>-->
+                <div class="containingDiv" [ngClass]="review.userImageURL ? '' : 'hide'"> <img [src]="review.userImageURL"> </div>
+                <div class="name">{{review.displayName}}</div>
+                <div class="commentIcon">{{review.numberOfReviews}} Review{{review.numberOfReviews > 1 ? 's' : ''}}</div>
+        </div>
+
+        <div class="reviewDetails">
+                
+                <div class="starsAndDate">
+                        <div class="stars"><app-rating [rating]="review.overallRating" ></app-rating> </div>
+                        <div class="date">{{review.reviewDate}}</div>
+                </div>  
+
+                <div class="ratings">
+                        Burger {{review.burger}} 	&#183; Benny {{review.benny}}	&#183; Bloody {{review.bloody}}	&#183; Beers {{review.beers}}
+                </div>
+
+                <div class="words">
+                        {{review.words}}
+                </div>
+
+        </div>
+                        
+            
+    </div>
+
+
+</div>
+
+
+

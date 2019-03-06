@@ -1,0 +1,175 @@
+.errorMessage{
+    position: relative;
+    top:5em;
+    width:90%;
+    max-width: 56em;
+    margin-right: auto;
+    margin-left: auto;
+    color: red;
+    font-size: 1em;
+    padding-left: 1em;
+    white-space: pre-wrap
+}
+
+.container {
+    position: relative;
+    top: 7em;
+    width:90%;
+    max-width: 56em;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #273247;
+    border-radius: 10px;
+    
+}
+
+.mapAndDetails{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--buttonBackgroundColor);
+    padding-top : .75em;
+    padding-right : .75em;
+    padding-left : .75em;
+    border-radius: 10px;
+}
+
+.map { 
+    width: 40%; 
+    border-radius: .5em;
+    margin-bottom: .75em;
+}
+
+/* start details */
+.details {
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+    margin-left: .75em;
+}
+
+/* start place */
+.place{
+    width:100%;
+    border-bottom: .1em solid var(--textColor);
+}
+.redOutline{
+    border:2px solid red;
+    border-radius: 5px;
+}
+/* end place */
+
+/* start drops and words */
+.dropsAndWords{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+}
+.drops{
+    height:2.33em;
+    width:8.23em;
+    margin-bottom: .75em;
+}
+.words{
+    margin-left: .75em;
+    height:auto;
+    width:98%;
+    border-radius: 5px;
+    resize: none;
+    background-color: #273247;
+    font-size: 1em;
+    color:var(--textColor);
+    border:none;
+    margin-bottom: .75em;
+    padding:.5em;
+}
+.words:focus{
+    outline: 0;
+}
+/* end drops and words */
+/* end details */
+
+
+.button {
+    width:auto;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    top:1em;
+}
+
+.error{
+    color: var(--textColor);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5em;
+    text-align: center;
+}
+.hide{
+    display:none;
+}
+.show{
+    display: block;
+}
+
+.stars{
+    font-size: 1.5em;
+    margin-top: .25em;
+    display: flex;
+    flex-direction: row;
+    color: var(--textColor);
+    padding-left: 1em;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .container {
+        top:5em;
+    }
+    
+    .mapAndDetails {
+        width:auto;
+        flex-direction: column-reverse;
+    }
+
+    .map { 
+        width: 100%; 
+        height:10em;
+        margin-top: 0;
+    }
+    
+    .details {
+        width:100%;
+        height:auto;
+        margin-left: 0;
+    }
+
+ 
+    .words{
+       margin-left: 1em;
+       border: 3px solid #273247;
+    }
+    
+}
+  
+
+
+
+
+@media screen and (max-width: 640px) {
+    
+    .container {
+        background-color: var(--buttonBackgroundColor);
+    }
+    .button{
+        width:95%;
+    }
+
+}
+
+
+@media screen and (max-width: 380px) and (orientation: portrait) {
+
+
+  
+}

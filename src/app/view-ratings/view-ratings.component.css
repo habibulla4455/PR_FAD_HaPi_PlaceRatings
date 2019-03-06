@@ -1,0 +1,54 @@
+.container {
+    position: absolute;
+    top: 7em;
+    width:95%;
+    max-width: 95%;
+    margin-right: 5%;
+    margin-left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile{
+    margin:1em;
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .container{
+        top:3.66em;
+        width:100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        display: block;
+        flex-wrap: nowrap;
+    }
+
+    .tile{
+        width:100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+   
+}
+
+@media screen and (max-width: 380px) and (orientation: portrait) {
+
+    .container{
+        width:100%;
+        top:0;
+        margin-right: 0;
+        margin-left: 0;
+        display: block;
+        flex-wrap: nowrap;
+
+    }
+
+    .tile{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+}

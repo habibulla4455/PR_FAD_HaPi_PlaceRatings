@@ -1,0 +1,152 @@
+
+.bar{
+  width: 100%;
+  background-color: var(--buttonBackgroundColor);
+  font-size: 1.5em;
+  z-index: 5;
+  position: fixed;
+  top:0;
+  right:0;
+}
+
+.container{
+  height:3em;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+/* start burger icon and animation*/
+.burger {
+  margin-top: auto;
+  margin-bottom: auto;
+  width:2.5em;
+}
+
+.top, .bottom {
+  height:.15em;
+}
+.middle {
+  height:.13em;
+}
+.top, .middle, .bottom  {
+  width: 1em;
+  margin:.2em;
+  background-color:var(--textColor);
+  border-radius: .5em; 
+  transition: var(--menuTransitionTime) ;
+}
+
+.topRotate{
+  transform: translateY(.325em) rotate(45deg);
+  width:.75em;
+}
+.middleShow{
+  transform: translateX(-5em);
+  
+}
+.bottomRotate{
+  transform: translateY(-.325em) rotate(-45deg);
+  width:.75em;
+}
+/* end burger icon and animation */
+
+/* start burger menu */
+.burgerMenu{
+
+  width:100%;
+
+  color: var(--textColor);
+  background-color:#192130;
+  color: var(--textColor);
+  height: 0;
+  max-height: 0;
+  transition: var(--menuTransitionTime) ;
+  font-size: 1em;
+  overflow: hidden;
+
+  position: absolute;
+  z-index: 2;
+  border-top: 2px solid var(--buttonHoverColor );
+}
+
+.burgerMenuExpand{
+  height: 50em;
+  max-height: 50em !important;
+  transition: var(--menuTransitionTime) ;
+}
+
+.burgerMenu p{
+  color:var(--textColor);
+  width:8em;
+  margin-left: 1.5em;
+}
+
+.burgerMenu p:hover {
+  background-color: var(--textColor);
+  color: var(--elementBackgroundColor);
+}
+.links{
+  width:12em;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+}
+.link{
+  color:var(--textColor);
+  font-size: 1.75em;
+  padding:.5em;
+  cursor: pointer;
+}
+.link:hover {
+  background-color: var(--textColor);
+  color: var(--elementBackgroundColor);
+}
+/* end burger menu */
+
+/* start user/sigin/register */
+.userInfo {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: var(--textColor);
+  display: flex;
+  flex-direction: row;
+  font-size: .75em;
+  cursor: pointer;
+}
+
+.profile{
+  text-decoration: none;
+}
+
+.signin{
+  border: 1px solid transparent;
+}
+.register{
+  border: 1px solid var(--textColor);
+}
+
+.register, .profile, .signin{
+  text-decoration: none;
+  outline:0;
+  padding: .25em .5em;
+}
+.hide {
+  display:none;
+}
+/* end user/sigin/register */
+
+.noOutline{outline: 0;}
+
+
+@media screen and (max-width: 640px) {
+
+  .burgerMenu{
+      background-color:#273247;
+    }
+
+}
+

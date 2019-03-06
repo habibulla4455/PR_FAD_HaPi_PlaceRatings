@@ -1,0 +1,83 @@
+
+.picklist{
+    background-image: url('../../assets/down.png');
+    background-repeat: no-repeat;
+    background-position: 6em .25em;
+    border: .1em solid var(--textColor);
+    border-radius: .25em;
+    cursor: pointer;
+    background-color: var(--buttonBackgroundColor);
+    color: var(--textColor);
+
+    padding:.5em 1em;
+    
+    width: 6em;
+    
+    position: absolute;
+    z-index: 1;
+    transition: .25s;
+}
+
+.upArrow{
+    background-image: url('../../assets/up.png');
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.selected{
+    float: right;
+    padding-right: 1.75em;
+}
+
+.picklistMenu{
+    color: var(--textColor);
+    cursor: pointer;
+    background-color: var(--buttonBackgroundColor);
+    
+    
+    height:0;
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+  
+
+}
+.picklistMenuExpand{
+    height:5.75em;
+    max-height: 5.75em;
+    background-color: var(--buttonBackgroundColor);
+    position: relative;
+    z-index: 2;
+
+    width: 6em;
+    border-right: .1em solid var(--textColor);
+    border-left: .1em solid var(--textColor);
+    border-bottom: .1em solid var(--textColor);
+    border-bottom-left-radius: .25em;
+    border-bottom-right-radius: .25em;
+    
+    
+    padding:.5em 1em;
+
+    top: 2em;
+}
+.option{
+    position: relative;
+    z-index: 5;
+    background-color: var(--buttonBackgroundColor);
+}
+.option:hover{
+    background-color: var(--textColor);
+    color: var(--buttonBackgroundColor);
+}
+
+
+
+
+
+

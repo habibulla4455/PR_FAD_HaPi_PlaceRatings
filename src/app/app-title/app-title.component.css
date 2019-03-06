@@ -1,0 +1,22 @@
+
+.container{
+    width:100%;
+    line-height: 5.25em;
+    position: absolute;
+    top: 7em;
+    width:90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+
+
+.box {
+    width:5em;
+    font-size: 5em;
+    color: var(--textColor);
+    margin-right: auto;
+    margin-left: auto;
+    
+   
+}
