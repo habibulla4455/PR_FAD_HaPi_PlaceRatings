@@ -27,9 +27,12 @@ export class ProfileComponent implements OnInit {
     .then( 
       (querySnapshot) => {
         this.populateReviews(querySnapshot);
+        this.getPictureFromAPI();
       }
     );
   }
+
+
 
 
   populateReviews(querySnapshot){
@@ -50,15 +53,41 @@ export class ProfileComponent implements OnInit {
       (a,b) => (a['reviewDate'] < b['reviewDate']) ? 1 : -1 );
   }
 
+   getPictureFromAPI(){
+    
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -33.866, lng: 151.196},
+      zoom: 15
+    });
+
+    for (const review of this.reviews) {
+      this.doAPICall(review,map);
+    }
+  }
+
+  doAPICall(review,map){
+    var request = {
+      placeId: review['placeId'],
+      fields: ['photos']
+    };
+    new google.maps.places.PlacesService(map)
+    .getDetails(request, (place, status) => {
+      console.log('status: '+status);
+      if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT ){
+        setTimeout( () => {this.doAPICall(review,map)} , 2000);
+      }
+      else
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        if(place['photos'] !== undefined ) review['image1'] = place['photos'][0].getUrl({'maxWidth': 300, 'maxHeight': 300});
+        else review['image1'] =  ' ';
+      }
+    });
+  }
 
   
   ngOnInit() {
 
     this.showChangePicture = false;
-    this.reviews = [];
-    this.userEmail = this.route.snapshot.paramMap.get("email");
-    this.userDisplayName = this.userEmail.substring(0, this.userEmail.lastIndexOf("@"));
-    this.loadUser();
 
     this.route.params.subscribe(params => {
       this.userEmail = params['email'];//.get("email");
@@ -68,12 +97,31 @@ export class ProfileComponent implements OnInit {
       .then(
         (url) => {
           this.userImage = url;
+          this.loadUser();
           }
-        );
-      this.reviews=[];
-      this.loadUser();
+        )
+        .catch( 
+          () => {
+            this.userImage = '';
+            this.loadUser();
+          }
+          
+        )
+        ;
     });
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   updateUserImage(){
 

@@ -160,6 +160,7 @@
     
     .container {
         background-color: var(--buttonBackgroundColor);
+        top:2em;
     }
     .button{
         width:95%;
@@ -168,8 +169,10 @@
 }
 
 
-@media screen and (max-width: 380px) and (orientation: portrait) {
+@media screen and (max-width: 359px) and (orientation: portrait) {
 
-
+    .container{
+        top:1em;
+    }
   
 }

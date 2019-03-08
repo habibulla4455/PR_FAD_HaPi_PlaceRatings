@@ -26,9 +26,7 @@ export class AddRatingComponent{
   bennyRating:number;
   beersRating:number;
   words:string;
-  image1:string;
-  image2:string;
-  image3:string;
+
 
   // map variable
   mapStyle;
@@ -163,10 +161,7 @@ export class AddRatingComponent{
       words: this.words,
       reviewDate : this.getTodaysDate(),
       numberOfReviews : 1,
-      userImageURL : this.user.photoURL,
-      image1: this.image1,
-      image2: this.image2,
-      image3: this.image3
+      userImageURL : this.user.photoURL
     };
   }
 
@@ -226,10 +221,10 @@ export class AddRatingComponent{
       this.phone = place['formatted_phone_number'];
     });
 
-    this.image1 = place['photos'][0].getUrl({'maxWidth': 300, 'maxHeight': 300});
-    this.image2 = place['photos'][1].getUrl({'maxWidth': 300, 'maxHeight': 300});
-    this.image3 = place['photos'][2].getUrl({'maxWidth': 300, 'maxHeight': 300});
-
+    //this.image1 = place['photos'][0].getUrl({'maxWidth': 300, 'maxHeight': 300});
+    //this.image2 = place['photos'][1].getUrl({'maxWidth': 300, 'maxHeight': 300});
+    //this.image3 = place['photos'][2].getUrl({'maxWidth': 300, 'maxHeight': 300});
+   
   }
 
   getAddrComponent(place, componentTemplate) {

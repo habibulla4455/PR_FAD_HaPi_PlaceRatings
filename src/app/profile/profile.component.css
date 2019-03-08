@@ -161,7 +161,8 @@
 }
 .name{
     margin-top: .25em;
-    font-size: .75em;
+    font-size: 1em;
+    overflow-wrap: break-word;
 }
 /* end place */
 
@@ -265,7 +266,11 @@
         width:auto;
     }
     .ratings{
-        font-size: .75em;
+        font-size: .9em;
+    }
+    .date{
+        padding-top: 1em;
+        font-size: .9em;
     }
 
     .stars{
@@ -273,9 +278,13 @@
         min-width:  7.25em;
     }
 
+    .words{
+        font-size: 1em;
+    }
+
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
     
     .container {
         flex-direction: column;
@@ -316,7 +325,7 @@
         width:auto;
     }
     .ratings{
-        font-size: .5em;
+        font-size: .66em;
     }
 
     .stars{
@@ -325,7 +334,40 @@
         font-size: 1.25em;
     }
     .date{
-        padding-top: .2em;
+        padding-top: .9em;
+        font-size: .7em;
+    }
+
+    .words{
+        font-size: .7em !important;
+    }
+
+    .name{
+        font-size: .75em;
+    }
+
+}
+
+
+@media screen and (max-width: 321px) {
+
+    .place{
+        width:4.75em;
+        min-width: 4.75em;
+        max-width: 4.75em;
+    }
+
+    .placeImage{
+        max-width: 4.25em;
+        max-height: 4.25em;
+    
+        height:4.25em;
+        width:4.25em;
+    }
+    .name{
+        max-width: 4em;
+        font-size: .75em;
+        overflow-wrap: break-word;
     }
 
 }

@@ -20,3 +20,21 @@
     
    
 }
+
+@media screen and (max-width: 376px) {
+    .box{
+        font-size: 4.75em;
+    }
+    }
+
+@media screen and (max-width: 361px) {
+    .box{
+        font-size: 4.5em;
+    }
+    }
+
+@media screen and (max-width: 321px) {
+.box{
+    font-size: 4em;
+}
+}

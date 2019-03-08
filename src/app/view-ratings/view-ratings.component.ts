@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TileMutexService } from "../tile-mutex.service";
 import * as firebase from 'firebase/app';
 import { environment } from '../../environments/environment';
 
@@ -16,8 +16,8 @@ export class ViewRatingsComponent implements OnInit {
   placeIDs:string[];
   firestore;
 
-
-  constructor() {
+  constructor(private tileMutex: TileMutexService) {
+    this.tileMutex.letOthersKnow( {'value':false, 'index':-1} );
     this.places = [];
     this.placeIDs =  [];
     
@@ -30,7 +30,7 @@ export class ViewRatingsComponent implements OnInit {
         }
       );
       //remove duplicates from places here
-      this.placeIDs = this.placeIDs.filter((el, i, a) => i === a.indexOf(el));
+      this.placeIDs = this.placeIDs.filter((el, i, a) => i === a.indexOf(el)); 
       }
     );
     

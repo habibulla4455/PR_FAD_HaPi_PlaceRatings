@@ -76,6 +76,7 @@
 
 .name{
     margin-top: .25em;
+    overflow-wrap: break-word;
 }
 .commentIcon{
     margin-top: .25em;
@@ -150,6 +151,85 @@
         font-size: .9em;
     }
 
+}
+
+@media screen and (max-width: 376px) {
+    .stars{
+        font-size: 1.25em;
+    }
+    .date{
+        padding-top: .6em;
+        font-size: .85em;
+    }
+    .ratings{
+        font-size: .85em;
+    }
+    .words{
+        font-size: .85em;
+    }
+}
+
+@media screen and (max-width: 361px) {
+  
+    .date{
+        padding-top: .6em;
+        font-size: .8em;
+    }
+    .ratings{
+        font-size: .8em;
+    }
+    .words{
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    /* start user */
+.user{
+    width:6em;
+    min-width: 6em;
+    max-width: 6em;
+}
+.userImage{
+    max-width: 5em;
+    max-height: 5em;
+    height:5em;
+    width:5em;
+}
+
+
+.containingDiv{
+    max-width: 5em;
+    max-height: 5em;
+    height:5em;
+    width:5em;
+}
+.containingDiv img {
+    max-width: 5em;
+    max-height: 5em;
+}
+
+.name{
+    max-width: 6em;
+    margin-top: .25em;
+    font-size: 10px !important;
+}
+.commentIcon{
+    margin-top: .25em;
+    background-image: url('../../assets/commentSmall.png');
+    background-repeat: no-repeat;
+    height:1.5em;
+    padding-left: 1.7em;
+    padding-top: .25em;
+    font-size: 10px !important;
+}
+.words{
+    margin-top: .75em;
+    font-size: .75em;
+}
+.ratings{
+    font-size: .7em;
+}
 }
 
 

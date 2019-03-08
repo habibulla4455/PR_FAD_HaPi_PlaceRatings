@@ -1,9 +1,0 @@
-sudo nam install -g @angular/cli // installs angular cli globally
-
-ng new nameOfApp // this creates the app in whatever folder you are currently in
-
-ng serve // executed after cd into the app folder.
-
-npm install —save bootstrap@3 // installs bootstrap3 locally. be in app folder when running this line. add "node_modules/bootstrap/dist/css/bootstrap.min.css", to angular.json in the styles section in the build section
-
-ng generate component name // generates everything needed for new component.
