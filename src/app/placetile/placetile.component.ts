@@ -37,7 +37,7 @@ export class PlacetileComponent implements OnInit {
       this.processReviews(querySnapshot);
       this.subscribe();
     });
-    console.log('last: '+this.last);
+    //console.log('last: '+this.last);
     }
 
     processReviews( querySnapshot ){

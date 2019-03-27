@@ -1,3 +1,4 @@
+
 <input type="file" name="file" id="file" class="inputfile" class="hiddenInput" #george (change)="upload(george)" />
 <div class="container"  [ngClass]="reviews.length === 0 ? 'containerNoReviews' : ''" >
                 
@@ -15,7 +16,7 @@
 
         <div class="reviews" [ngClass]="reviews.length === 0 ? 'noReviews' : ''" >
                
-                <div class="title">Reviews</div>
+                <div class="title">Ratings</div>
                
                 <div class="review" *ngFor="let review of reviews"> 
                         
@@ -34,7 +35,26 @@
                                 </div>  
                 
                                 <div class="ratings">
-                                        Burger {{review.burger}} 	&#183; Benny {{review.benny}}	&#183; Bloody {{review.bloody}}	&#183; Beers {{review.beers}}
+
+                                                {{ review.burger == '' ? '' : 'Burger '+review.burger }}
+                                                {{ review.burger != '' && (review.benny != '' ||
+                                                                           review.bloody !='' ||
+                                                                           review.beers != '' ) ? ' &#183; ' : '' }}
+                        
+                                                {{ review.benny == '' ? '' : 'Benny '+review.benny }}
+                                                {{ review.benny != '' && (review.bloody !='' ||
+                                                                          review.beers != '' ) ? ' &#183; ' : '' }}
+                                                                          
+                                                {{ review.bloody == '' ? '' : 'Bloody '+review.bloody }}
+                                                {{ review.bloody != '' && review.beers != ''  ? ' &#183; ' : '' }}
+                                                
+                                                {{ review.beers == '' ? '' : 'Beers '+review.beers }}
+                                        <!--
+                                        Burger&nbsp;{{review.burger == '' ? '&nbsp;' : review.burger}}&nbsp;&#183;
+                                        Benny&nbsp;{{review.benny   == '' ? '&nbsp;' : review.benny}}&nbsp;&#183;
+                                        Bloody&nbsp;{{review.bloody == '' ? '&nbsp;' : review.bloody}}&nbsp;&#183;
+                                        Beers&nbsp;{{review.beers   == '' ? '&nbsp;' : review.beers}}
+                                -->
                                 </div>
                 
                                 <div class="words">

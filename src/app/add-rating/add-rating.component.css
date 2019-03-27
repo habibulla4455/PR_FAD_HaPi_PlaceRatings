@@ -169,10 +169,15 @@
 }
 
 
-@media screen and (max-width: 359px) and (orientation: portrait) {
+@media screen and (max-width: 415px) and (orientation: portrait) {
 
     .container{
-        top:1em;
+        top:3em;
+    }
+
+    .errorMessage{
+        margin-left: 6%;
+        font-size: .6em;
     }
   
 }

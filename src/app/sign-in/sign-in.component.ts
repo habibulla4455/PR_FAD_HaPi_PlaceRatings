@@ -38,11 +38,11 @@ export class SignInComponent implements OnInit {
 
     if ( obj.username === undefined || obj.username.length < 1  ) {
       this.showEmailError = true;
-      this.emailErrorMessage = 'Email Address can not be blank.';
+      this.emailErrorMessage = "C'mon, Morty. Ya gotta .. ya ..ya gotta enter an email address, Morty. ";
     }
     if ( obj.password === undefined || obj.password.length < 1  ) {
       this.showPasswordError = true;
-      this.passwordErrorMessage = 'Password can not be blank.';
+      this.passwordErrorMessage = 'Ah Jeez, Rick! We .. We need a Password over here, Rick!';
     }
   
     firebase.auth().signInWithEmailAndPassword(obj.username, obj.password)
@@ -62,12 +62,12 @@ export class SignInComponent implements OnInit {
 
         if (  error.code === 'auth/invalid-email' || error.code === 'auth/user-not-found' ){
           this.showEmailError = true;
-          this.emailErrorMessage = 'The email you’ve entered isn\'t registered.';
+          this.emailErrorMessage = "Ah Jeez, Rick! I don't think that email address even has an account here, Rick.";
         } 
 
         if (  error.code === 'auth/wrong-password' ){
           this.showPasswordError = true;
-          this.passwordErrorMessage = 'The password is incorrect';
+          this.passwordErrorMessage = "That's, that's the wrong password, Morty! Ya gotta .. Ya gotta type it good, Morty!";
         } 
     });
 

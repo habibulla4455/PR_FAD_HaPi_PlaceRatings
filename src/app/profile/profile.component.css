@@ -162,6 +162,7 @@
 .name{
     margin-top: .25em;
     font-size: 1em;
+    max-width: 6em;
     overflow-wrap: break-word;
 }
 /* end place */
@@ -348,6 +349,21 @@
 
 }
 
+@media screen and (max-width: 416px) {
+    .date{
+        padding-top: 1.1em;
+        margin-left: -.8em;
+    }
+    
+    }
+
+@media screen and (max-width: 361px) {
+.date{
+    padding-top: 1.1em;
+    margin-left: -.66em;
+}
+
+}
 
 @media screen and (max-width: 321px) {
 

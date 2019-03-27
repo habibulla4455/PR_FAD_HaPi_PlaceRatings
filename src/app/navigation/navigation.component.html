@@ -12,8 +12,8 @@
 
             <div class="profile noOutline" routerLink = "profile/{{user['email']}}"  [ngClass]="displayName ? '' : 'hide'" (click)="isChecked = false">{{displayName}} </div>
 
-            <div class="signin noOutline"   routerLink = "signIn"   [ngClass]="displayName ? 'hide' : ''" (click)="isChecked = false">sign in</div>
-            <div class="register noOutline" routerLink = "register" [ngClass]="displayName ? 'hide' : ''" (click)="isChecked = false">register</div>
+            <div class="signin noOutline"   routerLink = "signIn"   [ngClass]="displayName ? 'hide' : ''" (click)="isChecked = false">Sign In</div>
+            <div class="register noOutline" routerLink = "register" [ngClass]="displayName ? 'hide' : ''" (click)="isChecked = false">Register</div>
         
         </div>
 
@@ -22,13 +22,13 @@
     <div class = "burgerMenu" [ngClass]="isChecked ? 'burgerMenuExpand' : ''">
 
             <div class="links">
-                    <div class="link noOutline" routerLink = "viewRatings" (click)="isChecked = false" >view ratings</div>
-                    <div class="link noOutline" routerLink = "addRating" (click)="isChecked = false" [ngClass]="displayName ? '' : 'hide'" >add rating</div>
+                    <div class="link noOutline" routerLink = "viewRatings" (click)="isChecked = false" >View Ratings</div>
+                    <div class="link noOutline" routerLink = "addRating" (click)="isChecked = false" [ngClass]="displayName ? '' : 'hide'" >Add Rating</div>
                <!--     
                     <div class="link noOutline" routerLink = "search" (click)="isChecked = false" >search</div>
             -->
-                    <div class="link noOutline" routerLink = "profile/{{user['email']}}"  (click)="isChecked = false" [ngClass]="displayName ? '' : 'hide'"  >view profile</div>
-                    <div class="link noOutline" (click)="signOut()" (click)="isChecked = false" [ngClass]="displayName ? '' : 'hide'" >sign out</div>
+                    <div class="link noOutline" routerLink = "profile/{{user['email']}}"  (click)="isChecked = false" [ngClass]="displayName ? '' : 'hide'"  >View Profile</div>
+                    <div class="link noOutline" (click)="signOut()" (click)="isChecked = false" [ngClass]="displayName ? '' : 'hide'" >Sign Out</div>
             </div>
                 
         </div>

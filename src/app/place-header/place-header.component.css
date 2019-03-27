@@ -53,67 +53,64 @@ hr {
 }
 .numberOfReviews{
     margin-left: -5em !important;
-    padding-top: .25em;
+    padding-top: .45em;
     font-size: .75em !important;
+}
+
+    .numberOfReviews{
+        padding-top: .4em;
+    }
+
+@media screen and (max-width: 1025px) {
+
+        .numberOfReviews{
+            padding-top: .4em;
+        }
+    
+}
+
+@media screen and (max-width: 769px) {
+
+    .numberOfReviews{
+        padding-top: .4em;
+    }
+
 }
 
 @media screen and (max-width: 730px) {
     
-    .container {/*
-        min-width: 2em;
-        max-width: 500em;
-        margin-right: auto;
-        margin-left: auto;
-        JUSTBELOWISTHENEWSHIT
-        */
+    .container {
         width:100%;
         min-width: 1em;
         max-width: 500em;
         border-bottom: 2px solid var(--buttonHoverColor );
-        background-color: var(--buttonBackgroundColor);
         margin-bottom: -.15em;
         border-radius: 0px;
-        padding-top: 1em;
     }
     .pictureContainer{
         max-height: 8em;
-        margin-bottom: 1em;
     }
     .headerImage{
         height:6em;
         width:8em;
-        margin-right: 1em;
-        margin-left: 1em;
-        border-radius: 7px;
     }
     hr {
         display:none;
     }
 }
-/*
-@media screen and (max-width: 380px) and (orientation: portrait) {
-    
-    .container {
-        min-width: 2em;
-        max-width: 500em;
-        margin-right: auto;
-        margin-left: auto;
-        border-radius: 10px;
-        padding-top: 1em;
+
+@media screen and (max-width: 416px) {
+
+    .numberOfReviews{
+        padding-top: .4em;
     }
 
-    .pictureContainer{
-        max-height: 8em;
-        margin-bottom: 1em;
+}
+
+@media screen and (max-width: 361px) {
+
+    .numberOfReviews{
+        padding-top: .4em;
     }
 
-    .headerImage{
-        height:6em;
-        width:8em;
-        margin-right: 1em;
-        margin-left: 1em;
-        border-radius: 7px;
-    }
-
-  
-}*/
+}

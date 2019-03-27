@@ -83,14 +83,14 @@ export class AddRatingComponent{
 
     if ( this.brunchPlace === undefined ){
       this.noPlace = true;
-      this.placeErrorMessage += "I mean, you have to at least let us know what place you are trying to rate. C'mon now... ";
+      this.placeErrorMessage = "Think, McFly! Think! What place you are trying to rate?";
     }
 
     if ( this.burgerRating === undefined && this.bennyRating === undefined && this.bloodyRating === undefined && this.beersRating === undefined ){
       this.noRating = true;
       if (this.placeErrorMessage != '' ) this.ratingErrorMessage += "\n Also, you ";
       else this.ratingErrorMessage += "You ";
-      this.ratingErrorMessage += "have to rate at least 1 thing, otherwise what's the point? C'mon now...";
+      this.ratingErrorMessage += "have to rate at least 1 thing, otherwise what's the point?";
     }
 
     if ( this.noPlace || this.noRating ) return null;

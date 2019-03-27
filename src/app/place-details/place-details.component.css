@@ -38,6 +38,10 @@
     width:7em;
     min-width: 7em;
     max-width: 7em;
+    cursor: pointer;
+}
+.user:focus{
+    outline:0;
 }
 .userImage{
     max-width: 6em;
@@ -75,6 +79,7 @@
 
 
 .name{
+    max-width: 6em;
     margin-top: .25em;
     overflow-wrap: break-word;
 }
@@ -106,8 +111,9 @@
     margin-left: -.5em;
 }
 .date{
-    padding-top: .75em;
+    padding-top: 1em;
     font-size: 1em;
+    margin-left: -.75em;
 }
 /* end starsAndDate */
 
@@ -153,12 +159,19 @@
 
 }
 
+@media screen and (max-width: 415px) {
+    .date{
+        padding-top: .66em;
+        margin-left: -.5em;
+    }
+}
+
 @media screen and (max-width: 376px) {
     .stars{
         font-size: 1.25em;
     }
     .date{
-        padding-top: .6em;
+        padding-top: .75em;
         font-size: .85em;
     }
     .ratings{
@@ -172,7 +185,8 @@
 @media screen and (max-width: 361px) {
   
     .date{
-        padding-top: .6em;
+        margin-left: -.5em;
+        padding-top: .7em;
         font-size: .8em;
     }
     .ratings{
@@ -210,7 +224,7 @@
 }
 
 .name{
-    max-width: 6em;
+    max-width: 5em;
     margin-top: .25em;
     font-size: 10px !important;
 }

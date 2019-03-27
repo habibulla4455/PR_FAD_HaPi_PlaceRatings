@@ -12,8 +12,11 @@ export class ForgotPasswordComponent implements OnInit {
   username:string;
   emailErrorMessage:string;
   showEmailError:boolean;
+  showConfirmation:boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    this.showConfirmation = false;
+  }
 
   ngOnInit() {
   }
@@ -32,7 +35,8 @@ export class ForgotPasswordComponent implements OnInit {
     firebase.auth().sendPasswordResetEmail(this.username)
       .then( () => {
         // Password reset email sent.
-        this.router.navigate(['/signIn']); 
+        //this.router.navigate(['/signIn']); 
+        this.showConfirmation = true;
       })
       .catch((error) => {
         // Error occurred. Inspect error.code.  auth/invalid-email

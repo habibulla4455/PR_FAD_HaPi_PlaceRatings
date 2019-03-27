@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit {
     };
     new google.maps.places.PlacesService(map)
     .getDetails(request, (place, status) => {
-      console.log('status: '+status);
+      //console.log('status: '+status);
       if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT ){
         setTimeout( () => {this.doAPICall(review,map)} , 2000);
       }

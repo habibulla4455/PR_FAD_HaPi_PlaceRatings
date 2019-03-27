@@ -38,11 +38,11 @@ export class RegisterComponent implements OnInit {
 
     if ( obj.username === undefined || obj.username.length < 1  ) {
       this.showEmailError = true;
-      this.emailErrorMessage = 'Email Address can not be blank.';
+      this.emailErrorMessage = "C'mon, Morty. Ya gotta .. ya ..ya gotta enter an email address, Morty. ";
     }
     if ( obj.password === undefined || obj.password.length < 1  ) {
       this.showPasswordError = true;
-      this.passwordErrorMessage = 'Password can not be blank.';
+      this.passwordErrorMessage = 'Ah Jeez, Rick! We .. We need a Password over here, Rick!';
     }
 
   
@@ -71,9 +71,9 @@ export class RegisterComponent implements OnInit {
 
                           this.router.navigate(['/viewRatings']); 
                         }).catch( (error) => {
-                          console.log('the error was: ');
-                          console.log(error.code);
-                          console.log(error.message);
+                        //  console.log('the error was: ');
+                         // console.log(error.code);
+                        //  console.log(error.message);
 
 
                         });
@@ -83,18 +83,18 @@ export class RegisterComponent implements OnInit {
       )     
       .catch((error) => {
 
-        console.log('the error was: ');
-        console.log(error.code);
-        console.log(error.message);
+      //  console.log('the error was: ');
+      //  console.log(error.code);
+      //  console.log(error.message);
 
         if(error.code === 'auth/invalid-email') {
           this.showEmailError = true;
-          this.emailErrorMessage = 'Not a valid email address.';
+          this.emailErrorMessage = "I'm Mister MeSeeks, Look at me! That's not a valid email address, Jerry!";
         }
         
         if(error.code === 'auth/weak-password') {
           this.showPasswordError = true;
-          this.passwordErrorMessage = 'Password must be at least 6 characters';
+          this.passwordErrorMessage = "Ya have to, ya have to use at least, at least 6 characters, Jerry!";
         }
 
 

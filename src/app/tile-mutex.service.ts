@@ -14,7 +14,7 @@ export class TileMutexService {
   apiInUse = this.apiInUseSubject.asObservable();
 
   letOthersKnow(signal : any ){
-    console.log( signal['index'] + ' is setting the lock to '+signal['value']);
+   // console.log( signal['index'] + ' is setting the lock to '+signal['value']);
     this.apiInUseSubject.next(signal);
   }
 

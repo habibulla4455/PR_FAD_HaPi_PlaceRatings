@@ -1,3 +1,4 @@
+
 <div class="container" >
         <div *ngFor="let placeID of placeIDs; let i = index" class="tile"  >
                 <app-placetile placeId="{{placeID}}" index="{{i}}" routerLink = "../place/{{placeID}}" last="{{placeIDs.length -1}}" ></app-placetile>   
