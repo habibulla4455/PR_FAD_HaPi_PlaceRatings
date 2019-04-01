@@ -31,7 +31,7 @@ export class AutocompleteComponent implements OnInit, AfterViewInit {
         const autocomplete = new google.maps.places.Autocomplete(
             this.addresstext.nativeElement,
             {
-                componentRestrictions: { country: 'US' },
+                componentRestrictions: { country: 'IN' },
                 types: [this.adressType]  // 'establishment' / 'address' / 'geocode'
             });
         google.maps.event.addListener(

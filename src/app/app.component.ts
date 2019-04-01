@@ -33,7 +33,7 @@ export class AppComponent {
     this.data.changeCurrentUser(user);
   } */
   }
-  title = 'BURGERS AND BLOODYS';
+  title = 'ratingApp';
 }
 
 

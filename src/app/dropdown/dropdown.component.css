@@ -2,7 +2,7 @@
 .picklist{
     background-image: url('../../assets/down.png');
     background-repeat: no-repeat;
-    background-position: 6em .25em;
+    background-position: 10em .25em;
     border: .1em solid var(--textColor);
     border-radius: .25em;
     cursor: pointer;
@@ -11,7 +11,7 @@
 
     padding:.5em 1em;
     
-    width: 6em;
+    width: 10em;
     
     position: absolute;
     z-index: 1;

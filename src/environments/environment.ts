@@ -6,12 +6,12 @@ require("firebase/storage");
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyDuYRpTJp2l_FolZBIE1-n2oIp1FnSs7e8",
-    authDomain: "burgersandbloody-1548921763418.firebaseapp.com",
-    databaseURL: "https://burgersandbloody-1548921763418.firebaseio.com",
-    projectId: "burgersandbloody-1548921763418",
-    storageBucket: "burgersandbloody-1548921763418.appspot.com",
-    messagingSenderId: "1020185597648"
+    apiKey: "AIzaSyDSs2ptd2Dzi9C5XxNGffXy-ushVBabyOM",
+    authDomain: "habib-e7999.firebaseapp.com",
+    databaseURL: "https://habib-e7999.firebaseio.com",
+    projectId: "habib-e7999",
+    storageBucket: "habib-e7999.appspot.com",
+    messagingSenderId: "593669101940"
   }
 };
 

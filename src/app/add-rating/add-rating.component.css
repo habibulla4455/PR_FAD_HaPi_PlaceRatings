@@ -66,7 +66,7 @@
 }
 .drops{
     height:2.33em;
-    width:8.23em;
+    width:12.23em;
     margin-bottom: .75em;
 }
 .words{
@@ -80,7 +80,7 @@
     color:var(--textColor);
     border:none;
     margin-bottom: .75em;
-    padding:.5em;
+    padding:2.5em;
 }
 .words:focus{
     outline: 0;

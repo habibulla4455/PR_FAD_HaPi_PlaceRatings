@@ -21,11 +21,13 @@ export class AddRatingComponent{
   firestore;
   brunchPlace:string;
   placeId:string;
-  burgerRating:number;
-  bloodyRating:number;
-  bennyRating:number;
-  beersRating:number;
+  funInterestingRating:number;
+  groupHangoutRating:number;
+  learnEntertainmentRating:number;
+  personalFavRating:number;
   words:string;
+
+  //Fun_Interesting , Group Hangout, Learn_Entertainment, Personal Fav
 
 
   // map variable
@@ -33,7 +35,7 @@ export class AddRatingComponent{
   geocoder:google.maps.Geocoder;
 
   // list to repeat on 
-  thingsToRate:['Burger','Benny','Bloody','Beers'];
+  thingsToRate:['Fun_Interesting','Learn_Entertainment','Group_Hangout','Personal_Fav'];
 
   user;
 
@@ -62,7 +64,7 @@ export class AddRatingComponent{
       }
     });
 
-    this.thingsToRate=['Burger','Benny','Bloody','Beers'];
+    this.thingsToRate=['Fun_Interesting','Learn_Entertainment','Group_Hangout','Personal_Fav'];
     
     this.firestore = firebase.firestore();
 
@@ -73,7 +75,7 @@ export class AddRatingComponent{
   }//end constructor
 
   ngAfterViewInit(){
-    this.setMap('Philadelphia,PA',14);// initialize the map
+    this.setMap('Hyderabad, Telangana',14);// initialize the map
   } // end ngAfterViewInit
 
   addButtonHandler(s){
@@ -86,7 +88,7 @@ export class AddRatingComponent{
       this.placeErrorMessage = "Think, McFly! Think! What place you are trying to rate?";
     }
 
-    if ( this.burgerRating === undefined && this.bennyRating === undefined && this.bloodyRating === undefined && this.beersRating === undefined ){
+    if ( this.funInterestingRating === undefined && this.learnEntertainmentRating === undefined && this.groupHangoutRating === undefined && this.personalFavRating === undefined ){
       this.noRating = true;
       if (this.placeErrorMessage != '' ) this.ratingErrorMessage += "\n Also, you ";
       else this.ratingErrorMessage += "You ";
@@ -128,20 +130,20 @@ export class AddRatingComponent{
 
   ratingComponentClick(clickObj: any): void {
     
-      if(clickObj.menuItem === 'Burger') this.burgerRating = clickObj.rating;
-      if(clickObj.menuItem === 'Bloody') this.bloodyRating = clickObj.rating;
-      if(clickObj.menuItem === 'Benny') this.bennyRating = clickObj.rating;
-      if(clickObj.menuItem === 'Beers') this.beersRating = clickObj.rating;
+      if(clickObj.menuItem === 'funInteresting') this.funInterestingRating = clickObj.rating;
+      if(clickObj.menuItem === 'Group_Hangout') this.groupHangoutRating = clickObj.rating;
+      if(clickObj.menuItem === 'Learn_Entertainment') this.learnEntertainmentRating = clickObj.rating;
+      if(clickObj.menuItem === 'Personal_Fav') this.personalFavRating = clickObj.rating;
 
   }
 
   dropdownReceiver(clickObj : any){
       this.noRating = false;
       this.ratingErrorMessage = '';
-      if(clickObj.item === 'Burger') this.burgerRating = clickObj.rating;
-      if(clickObj.item === 'Bloody') this.bloodyRating = clickObj.rating;
-      if(clickObj.item === 'Benny') this.bennyRating = clickObj.rating;
-      if(clickObj.item === 'Beers') this.beersRating = clickObj.rating;
+      if(clickObj.item === 'Fun_Interesting') this.funInterestingRating = clickObj.rating;
+      if(clickObj.item === 'Group_Hangout') this.groupHangoutRating = clickObj.rating;
+      if(clickObj.item === 'Learn_Entertainment') this.learnEntertainmentRating = clickObj.rating;
+      if(clickObj.item === 'Personal_Fav') this.personalFavRating = clickObj.rating;
   }
 
 
@@ -152,10 +154,10 @@ export class AddRatingComponent{
       email: this.user.email,
       place: this.brunchPlace,
       placeId: this.placeId,
-      burger: this.burgerRating === undefined ? '': this.burgerRating,
-      benny: this.bennyRating === undefined ? '': this.bennyRating,
-      bloody: this.bloodyRating === undefined ? '': this.bloodyRating,
-      beers: this.beersRating === undefined ? '': this.beersRating,
+      Fun_Interesting: this.funInterestingRating === undefined ? '': this.funInterestingRating,
+      Learn_Entertainment: this.learnEntertainmentRating === undefined ? '': this.learnEntertainmentRating,
+      Group_Hangout: this.groupHangoutRating === undefined ? '': this.groupHangoutRating,
+      Personal_Fav: this.personalFavRating === undefined ? '': this.personalFavRating,
       overallRating: this.getOverallRating(),
       displayName: this.user.displayName,
       words: this.words,
@@ -249,13 +251,13 @@ export class AddRatingComponent{
   getOverallRating(){
 
     var numberOfRatings = 4;
-    if ( this.burgerRating === undefined ) { this.burgerRating = 0; numberOfRatings--;}
-    if ( this.bennyRating === undefined )  { this.bennyRating = 0;  numberOfRatings--;}
-    if ( this.bloodyRating === undefined ) { this.bloodyRating = 0; numberOfRatings--;}
-    if ( this.beersRating === undefined )  { this.beersRating = 0;  numberOfRatings--;}
+    if ( this.funInterestingRating === undefined ) { this.funInterestingRating = 0; numberOfRatings--;}
+    if ( this.learnEntertainmentRating === undefined )  { this.learnEntertainmentRating = 0;  numberOfRatings--;}
+    if ( this.groupHangoutRating === undefined ) { this.groupHangoutRating = 0; numberOfRatings--;}
+    if ( this.personalFavRating === undefined )  { this.personalFavRating = 0;  numberOfRatings--;}
     if ( this.words === undefined )  { this.words = ''; }
 
-    var overallRating = (this.burgerRating+this.bennyRating+this.bloodyRating+this.beersRating)/numberOfRatings;
+    var overallRating = (this.funInterestingRating+this.learnEntertainmentRating+this.groupHangoutRating+this.personalFavRating)/numberOfRatings;
     return Math.round(overallRating);
   }
 
